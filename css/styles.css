@@ -1,0 +1,169 @@
+root {
+
+  --VeryDarkBlue: hsl(234, 12%, 34%);
+  --GrayishBlue: hsl(229, 6%, 66%);
+  --VeryLightGray: hsl(0, 0%, 98%);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  display: grid;
+  min-height: 100vh;
+  width: 100vw;
+  place-items: center;
+  font-size: 1.5rem;
+  background-color: var(--GrayishBlue);
+  overflow-x: hidden;
+  padding-block: 2rem 4rem;
+}
+
+.content{
+  margin-inline: auto;
+  text-align: center;
+  width: 30rem;
+  padding-block-end:5rem ;
+  color: var(--VeryDarkBlue);
+}
+
+.content h1{
+  font-weight:200;
+  font-size: 2rem;
+  color: var(--VeryDarkBlue);
+}
+
+.content .subtitle{
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.content .paragraph {
+  color: var(--GrayishBlue);
+  font-weight: 200;
+  padding-top: 2rem;
+}
+
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.card{
+  max-width: 35rem;
+  padding-inline: 2rem;
+  padding-block: 2rem 2.5rem;
+  color: var(--VeryLightGray);
+  border-radius: 0.85rem;
+  box-shadow: 1px 4px 14px -4px rgba(0,0,0,0.6);
+-webkit-box-shadow: 1px 4px 14px -4px rgba(0,0,0,0.6);
+-moz-box-shadow: 1px 4px 14px -4px rgba(0,0,0,0.6);
+}
+
+.card__title{
+  color: var(--VeryDarkBlue);
+  font-size: 1.8rem;
+}
+
+.card__paragraph{
+  padding-block: 1rem 3rem;
+  color: var(--VeryDarkBlue);
+  font-weight: 200;
+}
+
+.card img{
+  display: block;
+  float: right;
+}
+
+.card-sup,
+.card-tb,
+.card-kar,
+.card-calc{
+  position: relative;
+  overflow: hidden;
+}
+.card-sup::before,
+.card-tb::before,
+.card-kar::before,
+.card-calc::before{
+  --Cyan: hsl(180, 62%, 55%);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color:var(--Cyan);
+  top: 0;
+  left: 0;
+}
+
+.card-tb::before{
+  --Red: hsl(0, 78%, 62%);
+  background-color: var(--Red);
+}
+.card-kar::before{
+  --Orange: hsl(34, 97%, 64%);
+  background-color: var(--Orange);
+
+}
+.card-calc::before{
+  --Blue: hsl(212, 86%, 64%);
+  background-color: var(--Blue);
+}
+
+@media (min-width:1024px){
+
+  .content{
+    width: 45rem;
+  }
+  
+  .content h1{
+    font-size: 3rem;
+  }
+  .content .subtitle{
+    font-size: 3rem;
+  }
+  .cards{
+    max-width: 102rem;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,min-content);
+  }
+
+  .card{
+    max-width: 40rem;
+  }
+
+  .card-sup{
+    grid-row: 2/ 4;
+  }
+  .card-tb{
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+  .card-calc{
+    grid-column: 3/4;
+    grid-row: 2/ 4;
+
+  }
+  .card-kar{
+    grid-column: 2/3;
+  }
+
+
+}
+
+
